@@ -1,5 +1,9 @@
 package com.example.boardv1.board;
 
+import java.util.List;
+
+import com.example.boardv1.reply.ReplyResponse;
+
 import lombok.Data;
 
 public class BoardResponse {
@@ -17,6 +21,9 @@ public class BoardResponse {
 
         // 연산해서 만들어야 하는 것(화면에 안보임)
         private boolean isOwner; // 게시글의 주인인가?
+        private boolean isLoggedIn; // 로그인 했는가?
+
+        private List<ReplyResponse.DTO> replies;
 
         public DetailDTO(Board board, Integer sessionUserId) {
             this.id = board.getId();
@@ -25,6 +32,10 @@ public class BoardResponse {
             this.content = board.getContent();
             this.username = board.getUser().getUsername();
             this.isOwner = board.getUser().getId() == sessionUserId;
+            this.isLoggedIn = sessionUserId != null;
+            this.replies = board.getReplies().stream()
+                    .map(reply -> new ReplyResponse.DTO(reply, sessionUserId))
+                    .toList();
         }
 
     }
