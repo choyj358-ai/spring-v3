@@ -10,13 +10,37 @@
                     <input type="text" class="form-control" placeholder="Enter title" name="title">
                 </div>
                 <div class="mb-3">
-                    <textarea class="form-control" rows="5" name="content"></textarea>
+                    <textarea class="form-control" rows="5" id="content" name="content"></textarea>
                 </div>
                 <button class="btn btn-secondary form-control">글쓰기</button>
             </form>
         </div>
     </div>
 </div>
+
+<!-- 1) 썸머노트 CSS (꾸미기) -->
+<link rel="stylesheet" href="/css/summernote-lite.min.css">
+
+<!-- 2) jQuery (썸머노트가 꼭 필요로 함) -->
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+<!-- 3) 썸머노트 JS -->
+<script src="/js/summernote-lite.min.js"></script>
+
+<!-- 4) 한국어 -->
+<script src="/js/summernote-ko-KR.js"></script>
+
+<!-- 5) 썸머노트 실행(변신 주문) -->
+<script>
+  $(function () {
+    $('#content').summernote({
+      height: 300,
+      lang: 'ko-KR',
+      placeholder: '내용을 입력하세요'
+    });
+  });
+</script>
+
 
 </body>
 </html>

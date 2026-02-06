@@ -7,6 +7,8 @@ insert into board_tb (user_id, title, content, created_at) values (1, 'title3', 
 insert into board_tb (user_id, title, content, created_at) values (2, 'title4', 'content4', now());
 insert into board_tb (user_id, title, content, created_at) values (2, 'title5', 'content5', now());
 insert into board_tb (user_id, title, content, created_at) values (2, 'title6', 'content6', now());
+insert into board_tb (user_id, title, content, created_at) values (1, 'title7', 'https://www.youtube.com/watch?v=AAlUL7rE5Qg&list=RDAAlUL7rE5Qg&start_radio=1', now());
+insert into board_tb (user_id, title, content, created_at) values (1, 'title8', 'https://www.youtube.com/watch?v=pzLjMErLUcQ', now());
 
 insert into reply_tb (user_id, board_id, comment, created_at) values(1, 6, 'comment1', now());
 insert into reply_tb (user_id, board_id, comment, created_at) values(1, 6, 'comment2', now());

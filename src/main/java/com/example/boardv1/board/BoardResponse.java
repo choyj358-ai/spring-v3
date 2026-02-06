@@ -2,6 +2,8 @@ package com.example.boardv1.board;
 
 import java.util.List;
 
+import org.jsoup.Jsoup;
+
 import com.example.boardv1.reply.ReplyResponse;
 
 import lombok.Data;
