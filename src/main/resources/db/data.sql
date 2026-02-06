@@ -10,8 +10,8 @@ insert into board_tb (user_id, title, content, created_at) values (2, 'title6', 
 insert into board_tb (user_id, title, content, created_at) values (1, 'title7', 'https://www.youtube.com/watch?v=AAlUL7rE5Qg&list=RDAAlUL7rE5Qg&start_radio=1', now());
 insert into board_tb (user_id, title, content, created_at) values (1, 'title8', 'https://www.youtube.com/watch?v=pzLjMErLUcQ', now());
 
-insert into reply_tb (user_id, board_id, comment, created_at) values(1, 6, 'comment1', now());
-insert into reply_tb (user_id, board_id, comment, created_at) values(1, 6, 'comment2', now());
-insert into reply_tb (user_id, board_id, comment, created_at) values(2, 6, 'comment3', now());
+insert into reply_tb (user_id, board_id, comment, created_at) values(1, null, 'comment1', now());
+insert into reply_tb (user_id, board_id, comment, created_at) values(1, null, 'comment2', now());
+insert into reply_tb (user_id, board_id, comment, created_at) values(2, null, 'comment3', now());
 insert into reply_tb (user_id, board_id, comment, created_at) values(1, 5, 'comment4', now());
 insert into reply_tb (user_id, board_id, comment, created_at) values(2, 5, 'comment5', now());

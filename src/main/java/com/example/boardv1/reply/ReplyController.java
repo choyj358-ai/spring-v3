@@ -5,6 +5,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.example.boardv1._core.errors.ex.Exception401;
 import com.example.boardv1.user.User;
 
 import jakarta.servlet.http.HttpSession;
@@ -22,7 +23,7 @@ public class ReplyController {
 
         User sessionUser = (User) session.getAttribute("sessionUser");
         if (sessionUser == null)
-            throw new RuntimeException("인증되지 않았습니다.");
+            throw new Exception401("인증되지 않았습니다.");
 
         replyService.댓글등록(
                 reqDTO.getBoardId(),
@@ -36,7 +37,7 @@ public class ReplyController {
     public String replyDelete(@PathVariable("id") int id, @RequestParam("boardId") int boardId) {
         User sessionUser = (User) session.getAttribute("sessionUser");
         if (sessionUser == null)
-            throw new RuntimeException("인증되지 않았습니다.");
+            throw new Exception401("인증되지 않았습니다.");
 
         replyService.댓글삭제(id, sessionUser.getId());
 
