@@ -16,7 +16,7 @@ public class FilterConfig {
         return bean;
     }
 
-    @Bean
+    // @Bean
     public FilterRegistrationBean<LoginFilter> loginFilter() {
         FilterRegistrationBean<LoginFilter> bean = new FilterRegistrationBean<>();
         bean.setFilter(new LoginFilter());
